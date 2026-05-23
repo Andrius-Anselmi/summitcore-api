@@ -2,10 +2,7 @@ package com.summitcore.infrastructure.persistence;
 
 import com.summitcore.core.enuns.EventType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -15,6 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class EventEntity{
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
