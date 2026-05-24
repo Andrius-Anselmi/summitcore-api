@@ -9,17 +9,17 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public CreateEventCaseImpl createEventCase(EventGateway eventGateway){
+    public CreateEventCase createEventCase(EventGateway eventGateway){
         return new CreateEventCaseImpl(eventGateway);
     }
 
     @Bean
-    public FindAllEventCaseImpl findAllEventCaseImpl(EventGateway eventGateway){
+    public FindAllEventCase findAllEventCase(EventGateway eventGateway){
         return new FindAllEventCaseImpl(eventGateway);
     }
 
     @Bean
-    public FindByIdEventCaseImpl findByIdEventCaseImpl(EventGateway eventGateway){
+    public FindByIdEventCase findByIdEventCase(EventGateway eventGateway){
         return new FindByIdEventCaseImpl(eventGateway);
     }
 }
