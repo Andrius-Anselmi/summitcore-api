@@ -32,15 +32,17 @@ public class EventController {
     }
     @GetMapping()
     public ResponseEntity<List<EventResponse>> getAll(){
-        return ResponseEntity.ok().body(findAllEventCase.execute().
-                stream().toList().stream().
-                map(EventMapper::toEventResponse).toList());
+        return ResponseEntity.ok().body(findAllEventCase.execute()
+                .stream().map(EventMapper::toEventResponse)
+                .toList());
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<EventResponse> findById(@PathVariable Long id){
-        return findByIdEventCase.execute(id).map((event -> ResponseEntity.ok().
-                body(EventMapper.toEventResponse(event)))).orElse(ResponseEntity.notFound().build());
+        return findByIdEventCase.execute(id)
+                .map((event -> ResponseEntity.ok().
+                body(EventMapper.toEventResponse(event))))
+                .orElse(ResponseEntity.notFound().build());
 
     }
 
