@@ -1,6 +1,6 @@
 package com.summitcore.core.entities;
 
-import com.summitcore.core.enuns.EventType;
+import com.summitcore.core.enums.EventType;
 
 import java.time.LocalDateTime;
 

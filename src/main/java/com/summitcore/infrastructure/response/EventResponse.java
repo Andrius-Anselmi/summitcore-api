@@ -1,6 +1,6 @@
 package com.summitcore.infrastructure.response;
 
-import com.summitcore.core.enuns.EventType;
+import com.summitcore.core.enums.EventType;
 import lombok.Builder;
 
 import java.time.LocalDateTime;

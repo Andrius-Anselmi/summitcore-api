@@ -1,4 +1,4 @@
-package com.summitcore.core.enuns;
+package com.summitcore.core.enums;
 
 public enum EventType {
 

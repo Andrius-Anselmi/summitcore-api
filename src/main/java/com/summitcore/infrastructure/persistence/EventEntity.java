@@ -1,6 +1,6 @@
 package com.summitcore.infrastructure.persistence;
 
-import com.summitcore.core.enuns.EventType;
+import com.summitcore.core.enums.EventType;
 import jakarta.persistence.*;
 import lombok.*;
 
