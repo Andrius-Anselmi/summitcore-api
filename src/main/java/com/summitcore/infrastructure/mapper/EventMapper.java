@@ -12,8 +12,8 @@ public class EventMapper {
         return Event.create(
                 request.name(),
                 request.description(),
-                request.location(),
                 request.identify(),
+                request.location(),
                 request.capacity(),
                 request.startEvent(),
                 request.endEvent(),
