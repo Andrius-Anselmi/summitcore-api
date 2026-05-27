@@ -15,7 +15,7 @@ public class CreateEventCaseImpl implements CreateEventCase {
     @Override
     public Event execute(Event event) throws DuplicateEventException {
 
-        if (!(eventGateway.filterEventByIdentify(event.identify()).isEmpty())) {
+        if (!(eventGateway.findEventByIdentify(event.identify()).isEmpty())) {
             throw new DuplicateEventException("Identify " + event.identify() + " already exists");
         }
         return eventGateway.create(event);
