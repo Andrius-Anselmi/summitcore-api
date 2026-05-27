@@ -2,6 +2,7 @@ package com.summitcore.infrastructure.gateway;
 
 import com.summitcore.core.entities.Event;
 import com.summitcore.core.gateway.EventGateway;
+import com.summitcore.core.exception.DuplicateEventException;
 import com.summitcore.infrastructure.mapper.EventEntityMapper;
 import com.summitcore.infrastructure.persistence.EventRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,8 +19,8 @@ public class EventRepositoryGateway implements EventGateway {
 
 
     @Override
-    public Event create(Event event) {
-        return EventEntityMapper.toEvent(repository.save(EventEntityMapper.toEventEntity(event)));
+    public Event create(Event event) throws DuplicateEventException {
+            return EventEntityMapper.toEvent(repository.save(EventEntityMapper.toEventEntity(event)));
     }
 
     @Override
@@ -30,5 +31,11 @@ public class EventRepositoryGateway implements EventGateway {
     @Override
     public Optional<Event> findById(Long id){
         return repository.findById(id).map(EventEntityMapper::toEvent);
+    }
+
+    @Override
+    public Optional<Event> findEventByIdentify(String identify){
+        System.out.println(repository.findEventEntityByIdentify(identify));
+        return repository.findEventEntityByIdentify(identify).map(EventEntityMapper::toEvent);
     }
 }

@@ -22,4 +22,9 @@ public class BeanConfiguration {
     public FindByIdEventCase findByIdEventCase(EventGateway eventGateway){
         return new FindByIdEventCaseImpl(eventGateway);
     }
+
+    @Bean
+    public FindEventCase filterEventCase(EventGateway eventGateway){
+        return new FindEventCaseImpl(eventGateway);
+    }
 }
