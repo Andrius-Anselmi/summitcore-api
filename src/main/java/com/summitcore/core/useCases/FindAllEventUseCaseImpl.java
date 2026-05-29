@@ -5,11 +5,11 @@ import com.summitcore.core.gateway.EventGateway;
 
 import java.util.List;
 
-public class FindAllEventCaseImpl implements FindAllEventCase {
+public class FindAllEventUseCaseImpl implements FindAllEventUseCase {
 
     private final EventGateway eventGateway;
 
-    public FindAllEventCaseImpl(EventGateway eventGateway){
+    public FindAllEventUseCaseImpl(EventGateway eventGateway){
         this.eventGateway = eventGateway;
     }
 
