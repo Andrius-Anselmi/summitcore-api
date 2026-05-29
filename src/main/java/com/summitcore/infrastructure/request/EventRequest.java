@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public record EventRequest(
         String name,
         String description,
-        String identify,
+        String identifier,
         String location,
         Integer capacity,
         LocalDateTime startEvent,

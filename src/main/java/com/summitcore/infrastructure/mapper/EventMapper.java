@@ -12,7 +12,7 @@ public class EventMapper {
         return Event.create(
                 request.name(),
                 request.description(),
-                request.identify(),
+                request.identifier(),
                 request.location(),
                 request.capacity(),
                 request.startEvent(),
@@ -29,7 +29,7 @@ public class EventMapper {
                 .name(event.name())
                 .description(event.description())
                 .location(event.location())
-                .identify(event.identify())
+                .identifier(event.identifier())
                 .capacity(event.capacity())
                 .startEvent(event.startEvent())
                 .endEvent(event.endEvent())

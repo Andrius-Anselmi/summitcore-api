@@ -1,0 +1,1 @@
+ALTER TABLE event RENAME COLUMN identify TO identifier;

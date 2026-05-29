@@ -12,7 +12,7 @@ public class EventEntityMapper {
                 event.getId(),
                 event.getName(),
                 event.getDescription(),
-                event.getIdentify(),
+                event.getIdentifier(),
                 event.getLocation(),
                 event.getCapacity(),
                 event.getStartEvent(),
@@ -28,7 +28,7 @@ public class EventEntityMapper {
                 .name(event.name())
                 .description(event.description())
                 .location(event.location())
-                .identify(event.identify())
+                .identifier(event.identifier())
                 .capacity(event.capacity())
                 .startEvent(event.startEvent())
                 .endEvent(event.endEvent())

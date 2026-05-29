@@ -8,7 +8,7 @@ public record Event(
          Long id,
          String name,
          String description,
-         String identify,
+         String identifier,
          String location,
          Integer capacity,
          LocalDateTime startEvent,
@@ -17,10 +17,10 @@ public record Event(
          EventType typeEvent
 ) {
 
-    public static Event create(String name, String description, String identify, String location,
+    public static Event create(String name, String description, String identifier, String location,
                                Integer capacity, LocalDateTime startEvent, LocalDateTime endEvent, String organizer,
                                EventType typeEvent){
-        return new Event(null, name, description,identify,location,capacity,startEvent,endEvent,organizer,typeEvent);
+        return new Event(null, name, description,identifier,location,capacity,startEvent,endEvent,organizer,typeEvent);
     }
 
 

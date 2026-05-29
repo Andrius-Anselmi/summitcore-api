@@ -10,7 +10,8 @@ public interface EventGateway {
     Event create(Event event);
     List<Event> findAll();
     Optional<Event> findById(Long id);
-    Optional<Event> findEventByIdentify(String identify);
+    Optional<Event> filterEventByIdentifier(String identify);
+    void deleteEventById(Long id);
 
 
 }

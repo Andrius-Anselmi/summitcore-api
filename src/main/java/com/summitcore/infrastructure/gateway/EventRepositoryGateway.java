@@ -34,8 +34,12 @@ public class EventRepositoryGateway implements EventGateway {
     }
 
     @Override
-    public Optional<Event> findEventByIdentify(String identify){
-        System.out.println(repository.findEventEntityByIdentify(identify));
-        return repository.findEventEntityByIdentify(identify).map(EventEntityMapper::toEvent);
+    public Optional<Event> filterEventByIdentifier(String identify){
+        return repository.findEventEntityByIdentifier(identify).map(EventEntityMapper::toEvent);
+    }
+
+    @Override
+    public void deleteEventById(Long id){
+        repository.deleteById(id);
     }
 }

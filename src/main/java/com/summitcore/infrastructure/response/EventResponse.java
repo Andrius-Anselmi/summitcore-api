@@ -10,7 +10,7 @@ public record EventResponse(
         Long id,
         String name,
         String description,
-        String identify,
+        String identifier,
         String location,
         Integer capacity,
         LocalDateTime startEvent,

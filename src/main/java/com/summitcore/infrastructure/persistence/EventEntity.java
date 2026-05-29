@@ -19,7 +19,7 @@ public class EventEntity{
         private Long id;
         private String name;
         private String description;
-        private String identify;
+        private String identifier;
         private String location;
         private Integer capacity;
         private LocalDateTime startEvent;
