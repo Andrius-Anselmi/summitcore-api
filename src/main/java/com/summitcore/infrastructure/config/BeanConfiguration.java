@@ -9,22 +9,27 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public CreateEventCase createEventCase(EventGateway eventGateway){
-        return new CreateEventCaseImpl(eventGateway);
+    public CreateEventUseCase createEventCase(EventGateway eventGateway){
+        return new CreateEventUseCaseImpl(eventGateway);
     }
 
     @Bean
-    public FindAllEventCase findAllEventCase(EventGateway eventGateway){
-        return new FindAllEventCaseImpl(eventGateway);
+    public FindAllEventUseCase findAllEventCase(EventGateway eventGateway){
+        return new FindAllEventUseCaseImpl(eventGateway);
     }
 
     @Bean
-    public FindByIdEventCase findByIdEventCase(EventGateway eventGateway){
-        return new FindByIdEventCaseImpl(eventGateway);
+    public FindByIdEventUseCase findByIdEventCase(EventGateway eventGateway){
+        return new FindByIdEventUseCaseImpl(eventGateway);
     }
 
     @Bean
-    public FindEventCase filterEventCase(EventGateway eventGateway){
-        return new FindEventCaseImpl(eventGateway);
+    public FilterEventUseCase filterEventCase(EventGateway eventGateway){
+        return new FilterEventUseCaseImpl(eventGateway);
+    }
+    
+    @Bean
+    public DeleteEventByIdUseCase DeleteEventByIdUseCase(EventGateway eventGateway){
+        return new DeleteEventByIdUseCaseImpl(eventGateway);
     }
 }
