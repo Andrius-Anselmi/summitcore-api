@@ -32,4 +32,9 @@ public class BeanConfiguration {
     public DeleteEventByIdUseCase DeleteEventByIdUseCase(EventGateway eventGateway){
         return new DeleteEventByIdUseCaseImpl(eventGateway);
     }
+
+    @Bean
+    public UpdateEventUseCase UpdateEventUseCase(EventGateway eventGateway){
+        return new UpdateEventUseCaseImpl(eventGateway);
+    }
 }

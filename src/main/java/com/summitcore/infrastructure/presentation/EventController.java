@@ -23,6 +23,7 @@ public class EventController {
     private final FindByIdEventUseCase findByIdEventUseCase;
     private final FilterEventUseCase filterEventUseCase;
     private final DeleteEventByIdUseCase deleteEventByIdUseCase;
+    private final UpdateEventUseCase updateEventUseCase;
 
     @PostMapping()
     public ResponseEntity<ApiResponse<EventResponse>>create(@RequestBody EventRequest request){
@@ -52,6 +53,12 @@ public class EventController {
     public ResponseEntity<Void> deleteById(@PathVariable Long id){
         deleteEventByIdUseCase.execute(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<EventResponse> updateById(@PathVariable Long id, @RequestBody EventRequest request){
+        return ResponseEntity.ok().
+                body(EventMapper.toEventResponse(updateEventUseCase.execute(id, EventMapper.toEvent(request))));
     }
 
 }

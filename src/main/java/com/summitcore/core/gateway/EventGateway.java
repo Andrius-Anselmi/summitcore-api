@@ -12,6 +12,7 @@ public interface EventGateway {
     Optional<Event> findById(Long id);
     Optional<Event> filterEventByIdentifier(String identify);
     void deleteEventById(Long id);
+    Event updateEvent(Long id, Event event);
 
 
 }

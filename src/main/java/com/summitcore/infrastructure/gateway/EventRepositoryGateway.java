@@ -1,9 +1,12 @@
 package com.summitcore.infrastructure.gateway;
 
 import com.summitcore.core.entities.Event;
+import com.summitcore.core.exception.EventNotFoundException;
 import com.summitcore.core.gateway.EventGateway;
 import com.summitcore.core.exception.DuplicateEventException;
 import com.summitcore.infrastructure.mapper.EventEntityMapper;
+import com.summitcore.infrastructure.mapper.EventUpdateMapper;
+import com.summitcore.infrastructure.persistence.EventEntity;
 import com.summitcore.infrastructure.persistence.EventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -16,6 +19,7 @@ import java.util.Optional;
 public class EventRepositoryGateway implements EventGateway {
 
     private final EventRepository repository;
+    private final EventUpdateMapper mapper;
 
 
     @Override
@@ -42,4 +46,15 @@ public class EventRepositoryGateway implements EventGateway {
     public void deleteEventById(Long id){
         repository.deleteById(id);
     }
+
+    @Override
+    public Event updateEvent(Long id, Event event) {
+        EventEntity eventUpdate = repository.findById(id).orElseThrow(() -> new EventNotFoundException("Event not found"));
+        mapper.updateFromRequest(event, eventUpdate);
+
+        return EventEntityMapper.toEvent(repository.save(eventUpdate));
+    }
+
+
+
 }
