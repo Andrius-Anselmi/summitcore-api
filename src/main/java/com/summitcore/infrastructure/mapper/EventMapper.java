@@ -37,4 +37,6 @@ public class EventMapper {
                 .typeEvent(event.typeEvent())
                 .build();
     }
+
+
 }
