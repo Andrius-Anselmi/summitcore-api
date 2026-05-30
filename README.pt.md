@@ -338,6 +338,8 @@ MIT — veja [LICENSE](./LICENSE).
 
 ---
 
-<div align="center">
-Desenvolvido por Built by [Andrius Anselmi](https://github.com/Andrius-Anselmi) · [LinkedIn](https://www.linkedin.com/in/andrius-anselmi)
-</div>
+---
+
+<p align="center">
+  Desenvolvido por <a href="https://github.com/Andrius-Anselmi">Andrius Anselmi</a> · <a href="https://www.linkedin.com/in/andrius-anselmi">LinkedIn</a>
+</p>
