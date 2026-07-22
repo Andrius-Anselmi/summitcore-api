@@ -37,11 +37,18 @@
 
 ## O Problema
 
-Construir uma API de eventos é simples. Construir uma que não desmorona sob o próprio peso, não é.
+Durante o desenvolvimento de APIs, é comum começar com uma estrutura simples: controllers chamando services, services acessando repositories e entidades sendo retornadas diretamente nas respostas.
 
-A maioria das implementações conecta o controller diretamente ao repository, serializa as entidades JPA como JSON e considera o trabalho feito. Isso funciona — até que uma mudança de schema quebra o contrato da API, até que as regras de negócio se espalharem por controllers e services sem nenhuma fronteira clara, até que a camada de banco de dados começa a ditar o que o domínio pode expressar.
+Embora essa abordagem funcione em projetos menores, ela pode gerar problemas conforme a aplicação cresce, como acoplamento entre camadas, dificuldade de manutenção e dependência direta da estrutura do banco de dados.
 
-O SummitCore foi construído em torno das decisões que previnem esses problemas: Clean Architecture com uma fronteira rígida entre core e infraestrutura, use cases como único ponto de lógica de negócio, DTOs que desacoplam o contrato da API da persistência, tratamento centralizado de exceções, Flyway para migrations de schema e configuração via variáveis de ambiente.
+O SummitCore foi desenvolvido buscando uma arquitetura mais organizada e escalável, utilizando Clean Architecture para separar regras de negócio da infraestrutura.
+
+O projeto aplica:
+- Use Cases para centralizar a lógica de negócio;
+- DTOs para separar os contratos da API das entidades de persistência;
+- Tratamento global de exceções;
+- Flyway para gerenciamento de migrations;
+- Configuração através de variáveis de ambiente.
 
 ---
 
